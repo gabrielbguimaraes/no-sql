@@ -1,8 +1,14 @@
 from data_config.database_mongo import createMongoDatabase
 from data_config.database_redis import createRedisDatabase
 from auth import login
-from menu.menu import menu
+# Alteração aqui: importação explícita ou renomeada para evitar confusão
+from menu.menu import menu as menu_principal 
 import pprint
+import sys
+import os
+
+# Adiciona o diretório atual ao path para garantir que as importações locais funcionem
+sys.path.append(os.getcwd())
 
 def main():
     
@@ -28,7 +34,8 @@ def main():
 
     print("Usuário autenticado com sucesso! Bem-Vindo!")
     
-    menu(db_redis, user, usuarios_collection, produtos_collection, compras_collection)
+    # Chama a função renomeada
+    menu_principal(db_redis, user, usuarios_collection, produtos_collection, compras_collection)
 
 if __name__ == "__main__":
     main()
