@@ -3,7 +3,7 @@ from pymongo.server_api import ServerApi
 import certifi
 
 def createMongoDatabase():
-    uri = "mongodb+srv://nosql-user-fatec:gCMoG9JXSXH5ymtl@cluster0.z5cpx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    uri = "mongodb+srv://nosql-user-fatec:gCMoG9JXSXH5ymtl@cluster0.d8vef6u.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
     client = MongoClient(uri, tls=True, server_api=ServerApi('1'), tlsCAFile=certifi.where())
     try:
         client.admin.command('ping')
