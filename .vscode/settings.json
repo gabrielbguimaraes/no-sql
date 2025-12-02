@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./atv3-redis/mercado_livre"
+    ]
+}

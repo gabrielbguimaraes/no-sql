@@ -2,12 +2,15 @@ def login(usuarios_collection, db_redis, email, password):
     user = usuarios_collection.find_one({'email': email})
     
     if user:
-
+        # Verifica se a chave 'senha' existe no documento
+        # Se não existir, assume que a senha é vazia ou define uma lógica alternativa
         senha_banco = user.get('senha') 
         
+        # Dica para Debug: Se a senha for None, você pode querer imprimir um aviso
         if senha_banco is None:
             print(f"Aviso: O usuário {email} não tem senha cadastrada no banco.")
-            if password == "":
+
+            if password == "": 
                  pass 
             else:
                  print("Erro: Senha incorreta (ou usuário sem senha definida).")

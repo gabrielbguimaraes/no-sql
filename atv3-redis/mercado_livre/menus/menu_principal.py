@@ -1,5 +1,5 @@
-from menu.menu_favorite import menu_favorite
-from menu.menu_purchase import menu_purchase
+from .menu_favorite import menu_favorite
+from .menu_purchase import menu_purchase
 
 def menu(db_redis, user, usuarios_collection, produtos_collection, compras_collection):
     while True:
@@ -13,7 +13,7 @@ def menu(db_redis, user, usuarios_collection, produtos_collection, compras_colle
             menu_favorite(db_redis, user, produtos_collection, usuarios_collection)
         elif opcao == '2':
             menu_purchase(db_redis, user, usuarios_collection, produtos_collection, compras_collection)
-        elif opcao == '3' and '4':
+        elif opcao == '3':
             print("Saindo...")
             break
         else:
